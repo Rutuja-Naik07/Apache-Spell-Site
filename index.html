@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Apache Spell – Launch a website on EC2</title>
+<meta name="description" content="A Hogwarts-style animated guide to hosting a website with Apache on AWS EC2.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=IM+Fell+English&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="candles" aria-hidden="true"><i>🕯️</i><i>🕯️</i><i>🕯️</i><i>🕯️</i><i>🕯️</i></div>
+<header><h1>Ravi's Shop and the Apache Spell</h1>
+<p>Ten lessons on putting a website on AWS EC2. Each lesson adds one piece to the castle.</p>
+<span class="tag">#buildwithrutuja</span></header>
+<div class="bar">
+<button id="prev">‹ Previous</button><button id="play" class="gold">▶ Play</button><button id="next">Next ›</button><button id="reset">Reset</button><button id="theme">☀ Light / ☾ Night</button></div>
+<div class="legend"><span>✉️ visitor request</span><span>📜 website reply</span><span>🗝️ SSH key</span><span>😈 blocked intruder</span></div>
+<div class="grid">
+<nav id="list" aria-label="Lessons"></nav>
+<section>
+<div class="stage"><svg id="art" viewBox="0 0 800 440" role="img" aria-label="Castle diagram that grows with each lesson">
+<defs><path id="f1" d="M130,85 L330,170"/><path id="f2" d="M130,355 L170,235 L350,190"/><path id="f3" d="M350,205 L170,245 L130,360"/><path id="f4" d="M50,150 L312,165"/></defs>
+<g class="a" data-s="1"><rect x="145" y="8" width="650" height="424" rx="22" class="cloud"/><text x="165" y="28" class="lb">AWS Cloud · the castle grounds</text>
+<rect x="170" y="40" width="600" height="362" rx="16" class="vpc"/><text x="188" y="60" class="lb">VPC · private neighbourhood</text>
+<rect x="190" y="72" width="560" height="316" rx="12" class="sub"/><text x="206" y="90" class="sm">Public subnet</text>
+<rect x="330" y="100" width="400" height="250" rx="12" class="ec2"/><text x="346" y="120" class="lb">EC2 · Ravi's rented tower (Amazon Linux)</text>
+<rect x="150" y="205" width="40" height="50" rx="8" class="nd"/><text x="170" y="236" text-anchor="middle" font-size="22">🚪</text><text x="170" y="270" text-anchor="middle" class="sm">Gateway</text></g>
+<g class="a" data-s="2"><rect x="20" y="55" width="110" height="60" rx="10" class="nd"/><text x="75" y="82" text-anchor="middle" class="lb">🧙 Ravi</text><text x="75" y="102" text-anchor="middle" class="sm">admin laptop</text>
+<path d="M130,85 L330,170" class="dash"/><text x="205" y="112" class="sm">SSH · port 22</text></g>
+<g class="a" data-s="3"><rect x="350" y="135" width="170" height="100" rx="10" class="nd"/><text x="435" y="165" text-anchor="middle" class="lb">Apache HTTPD</text><text x="435" y="185" text-anchor="middle" class="sm">the receptionist</text><text x="435" y="215" text-anchor="middle" class="sm" id="ast">installing…</text></g>
+<g class="a" data-s="4"><circle cx="505" cy="150" r="6" class="on"/><text x="435" y="228" text-anchor="middle" class="sm"> </text></g>
+<g class="a" data-s="5"><rect x="550" y="135" width="160" height="100" rx="10" class="nd"/><text x="630" y="165" text-anchor="middle" class="lb">📜 The shelf</text><text x="630" y="185" text-anchor="middle" class="sm">/var/www/html</text><rect x="585" y="198" width="90" height="26" rx="6" class="gold-f"/><text x="630" y="216" text-anchor="middle" class="sm" style="fill:#2a1a05">index.html</text></g>
+<g class="a" data-s="6"><rect x="320" y="92" width="420" height="266" rx="16" class="ring"/><text x="530" y="82" text-anchor="middle" class="lb" style="fill:var(--gold)">🛡️ Security Group: port 80 open, port 22 only for Ravi</text><text x="30" y="145" class="sm">😈 intruder</text></g>
+<g class="a" data-s="7"><rect x="20" y="335" width="110" height="50" rx="10" class="nd"/><text x="75" y="358" text-anchor="middle" class="lb">🦉 Visitor</text><text x="75" y="376" text-anchor="middle" class="sm">browser</text><text x="205" y="320" class="sm">http://PUBLIC-IP</text></g>
+<g class="a" data-s="9"><rect x="205" y="300" width="108" height="48" rx="10" class="nd"/><text x="259" y="322" text-anchor="middle" class="lb">👁️ Monitor</text><text x="259" y="338" text-anchor="middle" class="sm">logs · status</text></g>
+<g class="a" data-s="2"><rect x="350" y="268" width="360" height="62" rx="8" fill="#0b0f1a" stroke="var(--gold)"/><text x="364" y="292" class="mono" id="cmd1"></text><text x="364" y="314" class="mono" id="cmd2"></text></g>
+<g id="dots"></g></svg></div>
+<div class="cards">
+<article><h2>In plain words</h2><p id="plain" class="big"></p><h2>Technical explanation</h2><p id="tech"></p></article>
+<article><h2>Watch the picture</h2><p id="watch"></p><h2>The spell (command)</h2><pre id="cmd"></pre></article></div>
+</section></div>
+<footer>Created by <b>Rutuja Naik</b> · <b>buildwithrutuja</b><br><small>An unofficial, fan-made learning project. Not affiliated with Hogwarts, Warner Bros. or AWS.</small></footer>
+<script src="app.js"></script></body></html>
